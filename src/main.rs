@@ -6,6 +6,7 @@ use leptos_router::{components::*, path};
 
 
 mod tvshowspage;
+use crate::tvshowspage::TVShowsListPage;
 
 mod tvpages {
     pub mod tvactionpage;
