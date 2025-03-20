@@ -143,6 +143,7 @@ fn App() -> impl IntoView {
             <main>
                 <Routes fallback=|| "Not Found.">
                     <Route path=path!("/") view=TVShowsListPage />
+                    <Route path=path!("/search", view=SearchPage />)
                     <Route path=path!("/tvactionpage") view=TVActionPage />
                     <Route path=path!("/tvcomedypage") view=TVComedyPage />
                     <Route path=path!("/tvfantasypage") view=TVFantasyPage />
@@ -222,7 +223,7 @@ fn Header() -> impl IntoView {
 fn NavBar() -> impl IntoView {
     view! {
         <nav>
-            <a href="/http://10.0.4.40:9000" class="navItem">"Movies"</a>
+            <a href="http://10.0.4.40:9000/" class="navItem">"Movies"</a>
             <a href="/" class="navItem">"TV Shows"</a>
             <a href="/search" class="navItem">"Search"</a>
         </nav>
