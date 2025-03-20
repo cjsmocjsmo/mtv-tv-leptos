@@ -222,8 +222,8 @@ fn Header() -> impl IntoView {
 fn NavBar() -> impl IntoView {
     view! {
         <nav>
-            <a href="/" class="navItem">"Movies"</a>
-            <a href="/tvshows" class="navItem">"TV Shows"</a>
+            <a href="/http://10.0.4.40:8080/" class="navItem">"Movies"</a>
+            <a href="/" class="navItem">"TV Shows"</a>
             <a href="/search" class="navItem">"Search"</a>
         </nav>
     }
