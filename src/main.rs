@@ -8,6 +8,9 @@ use leptos_router::{components::*, path};
 mod tvshowspage;
 use crate::tvshowspage::TVShowsListPage;
 
+mod searchpage;
+use crate::searchpage::SearchPage;
+
 mod tvpages {
     pub mod tvactionpage;
     pub mod tvcomedypage;
