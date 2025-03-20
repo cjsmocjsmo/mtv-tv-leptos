@@ -143,7 +143,7 @@ fn App() -> impl IntoView {
             <main>
                 <Routes fallback=|| "Not Found.">
                     <Route path=path!("/") view=TVShowsListPage />
-                    <Route path=path!("/search", view=SearchPage />)
+                    <Route path=path!("/search") view=SearchPage />
                     <Route path=path!("/tvactionpage") view=TVActionPage />
                     <Route path=path!("/tvcomedypage") view=TVComedyPage />
                     <Route path=path!("/tvfantasypage") view=TVFantasyPage />
