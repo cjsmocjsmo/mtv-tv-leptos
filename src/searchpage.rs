@@ -6,7 +6,7 @@ use leptos::web_sys::HtmlInputElement;
 
 async fn fetch_results(search_query: &str) -> Result<Vec<String>, Error> {
     // fetch search results from the server
-    let response = reqwest::get(&format!("http://10.0.4.41:7777/search/{}", search_query)).await?;
+    let response = reqwest::get(&format!("http://10.0.4.41:7777/tvsearch/{}", search_query)).await?;
     let results = response.json::<Vec<String>>().await?;
     Ok(results)
 }
@@ -40,7 +40,8 @@ pub fn SearchPage() -> impl IntoView {
             <div class="searchInnerDiv">
                 <form method="GET" action="" on:submit=on_submit>
                     <input class="search-input" type="text" placeholder="Search..." />
-                    <input class="searchButton" type="submit" />
+                    // <input class="searchButton" type="submit">Submit</input>
+                    <button class="searchButton" type="submit">Submit</button>
                 </form>
             </div>
             <span></span>
