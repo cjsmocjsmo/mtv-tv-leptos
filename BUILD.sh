@@ -1,3 +1,16 @@
+# git pull;
+# trunk build --release;
+# sudo docker run -d -v /home/whitepi/mtv-movs-leptos/dist:/usr/share/nginx/html:ro -p 9091:80 nginx:bookworm;
+
+
+# Navigate to the directory containing the Dockerfile
+cd /home/whitepi/mtv-movs-leptos
+
 git pull;
 trunk build --release;
-sudo docker run -d --name mtvtvlep -v /home/teresa/mtv-tv-leptos/dist:/usr/share/nginx/html:ro -p 9090:80 nginx:bookworm;
+
+# Build the Docker image
+docker build -t mtvmovslep:latest .
+
+# Run the Docker container
+docker run -d -p 9092:80 mtvmovslep:latest

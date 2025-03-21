@@ -15,22 +15,35 @@ async fn fetch_results(search_query: &str) -> Result<Vec<String>, Error> {
 pub fn SearchPage() -> impl IntoView {
     let search_query = signal(String::new());
 
-    let on_submit = move |ev: SubmitEvent| {
-        ev.prevent_default();
-        let input: HtmlInputElement = ev.target().unwrap().dyn_into().expect("Failed to cast to HtmlInputElement");
+    let on_submit = move |event: SubmitEvent| {
+        event.prevent_default();
+        let input: HtmlInputElement = event.target().unwrap().dyn_into().expect("Failed to cast to HtmlInputElement");
         let value = input.value();
         search_query.1.set(value.clone());
 
+        // Set the height of .spacerSpan elements to 0
+        let document = web_sys::window().unwrap().document().unwrap();
+        let spacer_spans = document.query_selector_all(".spacerSpan").unwrap();
+        for i in 0..spacer_spans.length() {
+            let span = spacer_spans.item(i).unwrap().dyn_into::<HtmlElement>().unwrap();
+            span.style().set_property("height", "0").unwrap();
+        }
+
         spawn_local(async move {
-            match fetch_results(&value).await {
-                Ok(results) => {
-                    // handle results
-                    log::info!("Search results: {:?}", results);
-                }
-                Err(err) => {
-                    // handle error
-                    log::error!("Error fetching search results: {:?}", err);
-                }
+            let results = fetch_results(&value).await.unwrap();
+            let search_results = document.query_selector(".searchResults").unwrap().unwrap();
+            search_results.set_inner_html("");
+            for result in results {
+                let search_result_div = document.create_element("div").unwrap();
+                search_result_div.set_class_name("searchResultDiv");
+                let img = document.create_element("img").unwrap();
+                img.set_attribute("src", &result).unwrap();
+                img.set_attribute("alt", &result).unwrap();
+                search_result_div.append_child(&img).unwrap();
+                let span = document.create_element("span").unwrap();
+                span.set_text_content(Some(&result));
+                search_result_div.append_child(&span).unwrap();
+                search_results.append_child(&search_result_div).unwrap();
             }
         });
     };
@@ -38,14 +51,19 @@ pub fn SearchPage() -> impl IntoView {
     view! {
         <div class="searchDiv">
             <div class="searchInnerDiv">
-                <form method="GET" action="" on:submit=on_submit>
+                <form method="GET" action="">
                     <input class="search-input" type="text" placeholder="Search..." />
-                    // <input class="searchButton" type="submit">Submit</input>
-                    <button class="searchButton" type="submit">Submit</button>
+                    <button class="searchButton" type="submit" on:click=on_submit>Submit</button>
                 </form>
             </div>
-            <span></span>
-            <span></span>
+            <span class="spacerSpan"></span>
+            <span class="spacerSpan"></span>
+            <div class="searchResults">
+                <div class="searchResultDiv">
+                    <img src="https://via.placeholder.com/150" alt="suppose to be a pic" />
+                    <span>Movie Title</span>
+                </div>
+            </div>
         </div>
     }
 }
