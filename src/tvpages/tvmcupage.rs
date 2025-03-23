@@ -30,5 +30,6 @@ pub fn TVMCUPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/wandavision.webp" alt="Wandavision" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }

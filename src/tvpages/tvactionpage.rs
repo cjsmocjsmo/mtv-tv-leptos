@@ -12,5 +12,6 @@ pub fn TVActionPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/shogun.webp" alt="Showgun" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }

@@ -33,5 +33,6 @@ pub fn TVStarWarsPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/visions.webp" alt="visions" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }

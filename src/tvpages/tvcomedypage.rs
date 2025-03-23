@@ -9,5 +9,6 @@ pub fn TVComedyPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/fubar.webp" alt="Comedy" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }

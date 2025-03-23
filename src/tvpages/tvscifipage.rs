@@ -45,5 +45,6 @@ pub fn TVSciFiPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/nightsky.webp" alt="Night Sky" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }

@@ -15,5 +15,6 @@ pub fn TVFantasyPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/wheeloftime.webp" alt="The Wheel Of Time" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }

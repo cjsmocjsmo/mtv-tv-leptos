@@ -33,5 +33,6 @@ pub fn TVStarTrekPage() -> impl IntoView {
                 <img src="http://10.0.4.41:9090/strangenewworlds.webp" alt="strange new worlds" />
             </a>
         </div>
+        <span class="spacerSpan"></span>
     }
 }
