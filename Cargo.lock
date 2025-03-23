@@ -1210,6 +1210,7 @@ dependencies = [
  "reqwest",
  "serde",
  "wasm-bindgen-futures",
+ "web-sys",
 ]
 
 [[package]]
