@@ -5,6 +5,7 @@ git pull;
 trunk build --release;
 
 arch=$(uname -m);
+echo $arch;
 
 if [[ "$arch" == "aarch64" ]]; then
     docker build -t mtvtvlep:arm64 -f Dockerfile64 .
