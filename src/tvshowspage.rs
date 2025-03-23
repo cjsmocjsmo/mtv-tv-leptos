@@ -3,17 +3,17 @@ use leptos::prelude::*;
 #[component]
 pub fn TVShowsListPage() -> impl IntoView {
     view! {
-        <div class="tvshows-section">
-            <div class="tvshows-sectionDiv">
-                <a class="tvshows-sectionDivItem" href="/tvactionpage">"Action"</a>
-                <a class="tvshows-sectionDivItem" href="/tvcomedypage">"Comedy"</a>
-                <a class="tvshows-sectionDivItem" href="/tvfantasypage">"Fantasy"</a>
-                <a class="tvshows-sectionDivItem" href="/tvmcupage">"MCU"</a>
-                <a class="tvshows-sectionDivItem" href="/tvscience">"Science"</a>
-                <a class="tvshows-sectionDivItem" href="/tvscifi">"SciFi"</a>
-                <a class="tvshows-sectionDivItem" href="/tvstartrek">"Star Trek"</a>
-                <a class="tvshows-sectionDivItem" href="/tvstarwars">"Star Wars"</a>
-                <a class="tvshows-sectionDivItem" href="/tvwesterns">"Westerns"</a>
+        <div class="tvshowsSection">
+            <div class="tvshowsSectionDiv">
+                <a class="tvshowsSectionDivItem" href="/tvactionpage">"Action"</a>
+                <a class="tvshowsSectionDivItem" href="/tvcomedypage">"Comedy"</a>
+                <a class="tvshowsSectionDivItem" href="/tvfantasypage">"Fantasy"</a>
+                <a class="tvshowsSectionDivItem" href="/tvmcupage">"MCU"</a>
+                <a class="tvshowsSectionDivItem" href="/tvscience">"Science"</a>
+                <a class="tvshowsSectionDivItem" href="/tvscifi">"SciFi"</a>
+                <a class="tvshowsSectionDivItem" href="/tvstartrek">"Star Trek"</a>
+                <a class="tvshowsSectionDivItem" href="/tvstarwars">"Star Wars"</a>
+                <a class="tvshowsSectionDivItem" href="/tvwesterns">"Westerns"</a>
             </div>
             <span class="spacerSpan"></span>
         </div>

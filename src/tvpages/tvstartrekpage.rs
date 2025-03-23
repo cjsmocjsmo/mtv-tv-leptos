@@ -4,7 +4,7 @@ use leptos::prelude::*;
 #[component]
 pub fn TVStarTrekPage() -> impl IntoView {
     view! {
-        <div class="tv-ass">
+        <div class="tvAss">
             <a href="/tvvoyagerseapage">
                 <img src="http://10.0.4.41:9090/voyager.webp" alt="voyager" />
             </a>
