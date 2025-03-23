@@ -13,4 +13,4 @@ trunk build --release;
 docker build -t mtvtvlep:latest .
 
 # Run the Docker container
-docker run -d -p 9092:80 mtvtvlep:latest
+docker run -d -p 9093:80 mtvtvlep:latest
