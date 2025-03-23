@@ -1,16 +1,16 @@
-# git pull;
-# trunk build --release;
-# sudo docker run -d -v /home/whitepi/mtv-movs-leptos/dist:/usr/share/nginx/html:ro -p 9091:80 nginx:bookworm;
-
-
-# Navigate to the directory containing the Dockerfile
-cd /home/whitepi/mtv-tv-leptos
+cd /home/whitepi/mtv-tv-leptos;
 
 git pull;
 trunk build --release;
 
-# Build the Docker image
-docker build -t mtvtvlep:latest .
+arch=$(uname -m);
 
-# Run the Docker container
-docker run -d -p 9093:80 mtvtvlep:latest
+if [ "$arch" == "aarch64" ]; then
+    docker build -t mtvtvlep:arm64 -f Dockerfile64 .
+    docker run -d -p 9093:80 mtvtvlep:arm64
+fi
+
+if [ "$arch" == "armv7l" ]; then
+    docker build -t mtvtvlep:arm32 -f Dockerfile32 .
+    docker run -d -p 9093:80 mtvtvlep:arm32
+fi
