@@ -54,14 +54,14 @@ pub fn SearchPage() -> impl IntoView {
             <div class="searchInnerDiv">
                 <form action="" on:submit={on_submit}>
                     <input class="searchInput" type="text" placeholder="Search..." />
-                    <button class="search-button" type="submit" >Submit</button>
+                    <button class="searchButton" type="submit" >Submit</button>
                 </form>
             </div>
             <span class="spacerSpan"></span>
             <span class="spacerSpan"></span>
             <div class="searchResults">
                 <div class="searchResultDiv">
-                    <img src="https://via.placeholder.com/150" alt="suppose to be a pic" />
+                    <img src="https://apod.nasa.gov/apod/image/2503/LunarEclipseColors_Jin_960.jpg" alt="suppose to be a pic" />
                     <span>Movie Title</span>
                 </div>
             </div>
