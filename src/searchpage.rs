@@ -57,14 +57,13 @@ pub fn SearchPage() -> impl IntoView {
                     <button class="searchButton" type="submit" >Submit</button>
                 </form>
             </div>
-            <span class="spacerSpan"></span>
-            <span class="spacerSpan"></span>
             <div class="searchResults">
                 <div class="searchResultDiv">
                     <img src="https://apod.nasa.gov/apod/image/2503/LunarEclipseColors_Jin_960.jpg" alt="suppose to be a pic" />
-                    <span>Movie Title</span>
+                    // <span>Movie Title</span>
                 </div>
             </div>
+            <span class="spacerSpan"></span>
         </div>
     }
 }
