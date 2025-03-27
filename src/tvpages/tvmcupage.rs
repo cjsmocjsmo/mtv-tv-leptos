@@ -6,28 +6,28 @@ pub fn TVMCUPage() -> impl IntoView {
     view! {
         <div class="tvAss">
             <a href="/tvsecretinvasionseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/secret_invasion.webp" alt="Secret Invation" />
+                <img src="http://10.0.4.41:7777/tvstatic/secret_invasion.webp" alt="Secret Invation" />
             </a>
             <a href="/tviamgrootseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/iamgroot.webp" alt="I Am Groot" />
+                <img src="http://10.0.4.41:7777/tvstatic/iamgroot.webp" alt="I Am Groot" />
             </a>
             <a href="/tvlokiseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/loki.webp" alt="Loki" />
+                <img src="http://10.0.4.41:7777/tvstatic/loki.webp" alt="Loki" />
             </a>
             <a href="/tvmoonknightseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/moonknight.webp" alt="MoonKnight" />
+                <img src="http://10.0.4.41:7777/tvstatic/moonknight.webp" alt="MoonKnight" />
             </a>
             <a href="/tvshehulkseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/shehulk.webp" alt="SheHulk" />
+                <img src="http://10.0.4.41:7777/tvstatic/shehulk.webp" alt="SheHulk" />
             </a>
             <a href="/tvhawkeyeseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/Hawkeye.webp" alt="Hawkeye" />
+                <img src="http://10.0.4.41:7777/tvstatic/Hawkeye.webp" alt="Hawkeye" />
             </a>
             <a href="/tvfalconwintersoldierseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/falconwintersoldier.webp" alt="Falcon And The Winter Soldier" />
+                <img src="http://10.0.4.41:7777/tvstatic/falconwintersoldier.webp" alt="Falcon And The Winter Soldier" />
             </a>
             <a href="/tvwandavisionseapage">
-                <img src="http://10.0.4.41:7777/tvthumbnails/wandavision.webp" alt="Wandavision" />
+                <img src="http://10.0.4.41:7777/tvstatic/wandavision.webp" alt="Wandavision" />
             </a>
         </div>
         <span class="spacerSpan"></span>
