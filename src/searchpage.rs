@@ -33,19 +33,20 @@ pub fn SearchPage() -> impl IntoView {
     }
 
     fn update_search_results(results: Vec<String>) {
-        let search_results = document().query_selector(".searchResults").unwrap().unwrap();
-        search_results.set_inner_html("");
-        for result in results {
-            let search_result_div = document().create_element("div").unwrap();
-            search_result_div.set_class_name("searchResultDiv");
-            let img = document().create_element("img").unwrap();
-            img.set_attribute("src", &result).unwrap();
-            img.set_attribute("alt", &result).unwrap();
-            search_result_div.append_child(&img).unwrap();
-            let span = document().create_element("span").unwrap();
-            span.set_text_content(Some(&result));
-            search_result_div.append_child(&span).unwrap();
-            search_results.append_child(&search_result_div).unwrap();
+        if let Some(search_results) = document().query_selector(".searchResults").unwrap() {
+            search_results.set_inner_html("");
+            for result in results {
+                if let Ok(search_result_div) = document().create_element("div") {
+                    search_result_div.set_class_name("searchResultDiv");
+                    if let Ok(img) = document().create_element("img") {
+                        if img.set_attribute("src", &result).is_ok() && img.set_attribute("alt", &result).is_ok(){
+                            if search_result_div.append_child(&img).is_ok(){
+                                search_results.append_child(&search_result_div).unwrap();
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -53,14 +54,14 @@ pub fn SearchPage() -> impl IntoView {
         <div class="searchDiv">
             <div class="searchInnerDiv">
                 <form action="" on:submit={on_submit}>
-                    <input class="searchInput" type="text" placeholder="Search..." />
+                    <input class="searchInput" type="text" placeholder="TVShow..." />
+                    <input class="searchInput" type="text" placeholder="Season..." />
                     <button class="searchButton" type="submit" >Submit</button>
                 </form>
             </div>
             <div class="searchResults">
                 <div class="searchResultDiv">
                     <img src="https://apod.nasa.gov/apod/image/2503/LunarEclipseColors_Jin_960.jpg" alt="suppose to be a pic" />
-                    // <span>Movie Title</span>
                 </div>
             </div>
             <span class="spacerSpan"></span>
