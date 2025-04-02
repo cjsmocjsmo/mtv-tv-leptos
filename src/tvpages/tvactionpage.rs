@@ -11,6 +11,9 @@ pub fn TVActionPage() -> impl IntoView {
             <a href="/tvshogunseapage">
                 <img src="http://10.0.4.41:7777/tvstatic/shogun.webp" alt="Showgun" />
             </a>
+            <a href="/tvmoblandpage">
+                <img src="http://10.0.4.41:7777/tvstatic/mobland.webp" alt="Mobland" />
+            </a>
         </div>
         <span class="spacerSpan"></span>
     }
